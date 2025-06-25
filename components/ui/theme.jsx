@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const Theme = () => {
-  const [isDarkMode, setIsDarkMode] = useState();
+  const [isDarkMode, setIsDarkMode] = useState(null);
 
   useEffect(() => {
     setIsDarkMode(localStorage.theme === "dark");
@@ -30,13 +30,13 @@ const Theme = () => {
     >
       <div
         data-theme={"light"}
-        className={`p-2 cursor-pointer rounded-full px-4 hover:text-shadow-white ${!isDarkMode ? "bg-black text-white" : ""}`}
+        className={`p-2 cursor-pointer transition-all duration-75 rounded-full px-4 hover:text-shadow-white ${isDarkMode !== null && !isDarkMode ? "bg-black text-white" : ""}`}
       >
         Light
       </div>
       <div
         data-theme={"dark"}
-        className={`p-2 cursor-pointer rounded-full px-4 ${isDarkMode ? "bg-white text-black" : ""}`}
+        className={`p-2 cursor-pointer transition-all duration-75 rounded-full px-4 ${(isDarkMode !== null) && isDarkMode ? "bg-white text-black" : ""}`}
       >
         Dark
       </div>

@@ -9,10 +9,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="opacity-0">
+    <html lang="en" className="opacity-0" data-theme="">
        <head >
         <Script id="theme-script" strategy="beforeInteractive">
           {`
+            document.documentElement.classList.add("opacity-0");
             const storedTheme = localStorage.getItem("theme");
             const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
             document.documentElement.dataset.theme = storedTheme || systemTheme;
