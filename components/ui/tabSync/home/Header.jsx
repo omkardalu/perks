@@ -1,37 +1,29 @@
-import Link from "next/link";
+"use client";
 
-const Header = ({currentTab}) => {
-  return(
-    <header>
-          <Link href="/perks/tabsync?tab=editor">
-            <button
-              className={`bg-blue-400 p-2 rounded-lg m-2 cursor-pointer ${
-                currentTab === "editor" ? "bg-green-600" : ""
-              } `}
-            >
-              editor
-            </button>
-          </Link>
-          <Link href="/perks/tabsync?tab=preview">
-            <button
-              className={`bg-blue-400 p-2 rounded-lg m-2 cursor-pointer ${
-                currentTab === "preview" ? "bg-green-600" : ""
-              }`}
-            >
-              preview
-            </button>
-          </Link>
-          <Link  href="/perks/tabsync?tab=settings">
-            <button
-              className={`bg-blue-400 p-2 rounded-lg m-2 cursor-pointer ${
-                currentTab === "settings" ? "bg-green-600" : ""
-              }`}
-            >
-              settings
-            </button>
-          </Link>
-        </header>
-  )
+import { useRouter, useSearchParams } from "next/navigation";
+
+const Header = () => {
+  const allowedTabs = ["editor", "preview", "settings"];
+  const router = useRouter();
+  const currentTab = useSearchParams().get("tab");
+
+  const buttons = allowedTabs.map((tab) => {
+    return (
+      <button
+        key={tab}
+        className={`bg-blue-400 p-2 rounded-lg m-2 ${
+          currentTab === tab && "bg-green-700"
+        } cursor-pointer`}
+        onClick={() => {
+          router.push(`?tab=${tab}`);
+        }}
+      >
+        {tab}
+      </button>
+    );
+  });
+
+  return <header>{buttons}</header>;
 };
 
 export default Header;
