@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🧪 SkillSpark Sandbox — Feature Mastery Checklist
 
-## Getting Started
+A Notion-style checklist covering all the experimental, real-world, chaos-mode frontend features — to help you master UI logic, DOM control, and component thinking using **Next.js, React, Tailwind**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### ✅ 1. Persistent Dark Mode Toggle (Hydration Safe)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **Description**: Detect and persist user theme (light/dark) using system preference or localStorage
+* **Teaches**: SSR-safe theming, `useEffect`, hydration mismatch fix, inline script hacks
+* **Bonus**: Animate theme toggle, sync with system preferences
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### ✅ 2. Active Link Highlight in Navbar
 
-## Learn More
+* **Description**: Navbar highlights the current page based on the route
+* **Teaches**: `usePathname()` usage, conditional classnames, DRY nav rendering
+* **Bonus**: Works with nested/dynamic routes
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔳 3. Resizable Panels (Like VS Code Split View)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Description**: Click-drag to resize two panels (left/right or top/bottom)
+* **Teaches**: DOM refs, `onMouseDown`, `onMouseMove`, state sync, layout reflow
+* **Bonus**: Snap to min width, persist size in localStorage
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🔄 4. Tab Sync with URL Query
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Description**: Maintain selected tab using `?tab=xyz` in the URL
+* **Teaches**: `useSearchParams()`, syncing UI with URL state, shallow routing
+* **Bonus**: Back/forward browser navigation works smoothly
+
+---
+
+### 📜 5. Scroll Sync Between Two Panes
+
+* **Description**: Scroll one pane and the second pane scrolls in sync (e.g., Markdown + Preview)
+* **Teaches**: `scrollTop`, `scrollHeight`, event listeners, scroll ratio sync
+* **Bonus**: Add smooth scrolling + fine-tuned calibration
+
+---
+
+### 🎢 6. Animated Route Transitions
+
+* **Description**: Smooth animations between routes/pages using Framer Motion
+* **Teaches**: Layout nesting, `AnimatePresence`, key-based re-renders
+* **Bonus**: Loading skeletons between routes
+
+---
+
+### ⚙️ 7. Settings Modal with Keyboard Shortcut (`cmd/ctrl + K`)
+
+* **Description**: Command menu that opens with keyboard, overlays screen, searchable list
+* **Teaches**: Accessibility, key listeners, modals, portals, focus trapping
+* **Bonus**: Use with dynamic navigation/actions
+
+---
+
+### 🔍 8. Search Highlight (Like VS Code Ctrl+F)
+
+* **Description**: Highlight searched terms dynamically in long text blocks
+* **Teaches**: Text parsing, RegExp, DOM manipulation, fuzzy search
+* **Bonus**: Add scroll-to-highlight feature
+
+---
+
+### 🎯 9. Click-and-Focus Tracker
+
+* **Description**: Log every clicked DOM element, outline it visually like Inspect Tool
+* **Teaches**: Event delegation, `document.addEventListener`, DOM traversal, z-index
+* **Bonus**: Export click map or heatmap-style logs
+
+---
+
+### 📦 10. Theme Builder UI (Like Tailwind Play)
+
+* **Description**: A UI for changing theme variables and previewing them live
+* **Teaches**: CSS variables, controlled inputs, live styling, dynamic class generation
+* **Bonus**: Save and share theme configs
+
+---
+
+### 🧠 11. AI Markdown Editor (Mock)
+
+* **Description**: Markdown editor + preview with fake AI reply on key press
+* **Teaches**: `textarea`, `react-markdown`, async loading simulation, typing delay logic
+* **Bonus**: Add typing animation + mock API feel
+
+---
+
+Use this like a **skill gym** — tick them off one by one, revisit the ones that broke your brain.
+Let me know which one you're unlocking next 💥
