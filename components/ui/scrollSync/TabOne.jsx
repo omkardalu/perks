@@ -15,7 +15,7 @@ const TabOne = ({ currentScrollTop, setcurrentScrollTop }) => {
 
   return (
     <div
-      className="p-4 overflow-y-scroll bg-gray-200"
+      className="p-4 overflow-y-scroll bg-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.08),0_10px_20px_rgba(0,0,0,0.12)]"
       ref={containerRef}
       onScroll={handleScroll}
     >
